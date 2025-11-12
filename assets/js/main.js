@@ -13,7 +13,11 @@
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-  /**
+
+  
+
+
+/**
  * Mobile nav toggle
  */
 const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
@@ -39,19 +43,6 @@ document.querySelectorAll('#navmenu a').forEach(link => {
   });
 });
 
-/**
- * Toggle mobile nav dropdowns
- */
-document.querySelectorAll('.navmenu .toggle-dropdown').forEach(toggle => {
-  toggle.addEventListener('click', function (e) {
-    e.preventDefault();
-    const parent = this.parentNode;
-    parent.classList.toggle('active');
-    const dropdown = parent.querySelector('ul');
-    if (dropdown) dropdown.classList.toggle('dropdown-active');
-    e.stopImmediatePropagation();
-  });
-});
 
   /**
    * Preloader
@@ -181,7 +172,7 @@ document.querySelectorAll('.navmenu .toggle-dropdown').forEach(toggle => {
 })();
 
 
-  const countdownDate = new Date("January 2, 2026 19:00:00").getTime(); 
+  const countdownDate = new Date("January 30, 2026 19:00:00").getTime(); 
 
   const timer = setInterval(function() {
     const now = new Date().getTime();
@@ -200,7 +191,7 @@ document.querySelectorAll('.navmenu .toggle-dropdown').forEach(toggle => {
     if (distance < 0) {
       clearInterval(timer);
       document.getElementById("countdown-timer").innerHTML =
-        "<h3 style='color:#FFD700; text-shadow:0 0 15px rgba(255,215,0,0.9);'>🎉 The Classical Night Has Begun! 🎶</h3>";
+        "<h3 style='color:#FFD700; text-shadow:0 0 15px rgba(255,215,0,0.9);'> The Classical Night Has Begun! 🎶</h3>";
     }
   }, 1000);
 

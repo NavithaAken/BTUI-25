@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +33,7 @@
 
 <body class="services-page">
 
-  
+
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
@@ -42,10 +44,10 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">News</a></li>
-          <li><a href="services.html">Login</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="login.html" class="active">Login</a></li>
+          <li><a href="register.html">Register</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -53,56 +55,61 @@
     </div>
   </header>
 
- <main class="main">
+  <main class="main">
 
-  <!-- ======= Login Section ======= -->
-  <section id="login" class="d-flex align-items-center justify-content-center py-5" style="min-height: 80vh; background: linear-gradient(135deg, #800000, #4a0000);">
-    <div class="container" data-aos="zoom-in">
+    <!-- ======= Login Section ======= -->
+    <section id="login" class="d-flex align-items-center justify-content-center py-5"
+      style="min-height: 80vh; background: linear-gradient(135deg, #800000, #4a0000);">
+      <div class="container" data-aos="zoom-in">
 
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-5">
 
-          <div class="card shadow-lg border-0 rounded-4" style="background-color: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
-            <div class="card-body p-5 text-center text-white">
+            <div class="card shadow-lg border-0 rounded-4"
+              style="background-color: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+              <div class="card-body p-5 text-center text-white">
 
-              <h2 class="mb-4 fw-bold text-warning">Login</h2>
-              <p class="mb-4">Welcome back! Please enter your credentials to continue.</p>
+                <h2 class="mb-4 fw-bold text-warning">Login</h2>
+                <p class="mb-4">Welcome back! Please enter your credentials to continue.</p>
 
-              <form action="#" method="post" class="needs-validation" novalidate>
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control bg-transparent text-white border-warning" id="email" placeholder="name@example.com" required>
-                  <label for="email" class="text-light">Email address</label>
-                  <div class="invalid-feedback">Please enter a valid email.</div>
-                </div>
+                <form action="#" method="post" class="needs-validation" novalidate>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control bg-transparent text-white border-warning" id="email"
+                      placeholder="name@example.com" required>
+                    <label for="email" class="text-light">Email address</label>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                  </div>
 
-                <div class="form-floating mb-4">
-                  <input type="password" class="form-control bg-transparent text-white border-warning" id="password" placeholder="Password" required>
-                  <label for="password" class="text-light">Password</label>
-                  <div class="invalid-feedback">Please enter your password.</div>
-                </div>
+                  <div class="form-floating mb-4">
+                    <input type="password" class="form-control bg-transparent text-white border-warning" id="password"
+                      placeholder="Password" required>
+                    <label for="password" class="text-light">Password</label>
+                    <div class="invalid-feedback">Please enter your password.</div>
+                  </div>
+                  
+                  <button type="submit" class="btn w-100 fw-bold py-2 text-dark"
+                    style="background-color: #FFD700; border-radius: 50px; transition: all 0.3s;">
+                    Login
+                  </button>
 
-                <button type="submit" class="btn w-100 fw-bold py-2 text-dark" style="background-color: #FFD700; border-radius: 50px; transition: all 0.3s;"  >
-                  Login
-                </button>
+                  <p class="mt-3 mb-0">Don't have an account?
+                    <a href="register.html" class="text-warning text-decoration-none">Register here</a>
+                  </p>
+                </form>
 
-                <p class="mt-3 mb-0">Don't have an account?
-                  <a href="#" class="text-warning text-decoration-none">Register here</a>
-                </p>
-              </form>
-
+              </div>
             </div>
+
           </div>
-
         </div>
+
       </div>
+    </section>
+    <!-- End Login Section -->
 
-    </div>
-  </section>
-  <!-- End Login Section -->
+  </main>
 
-</main>
-
-<footer id="footer" class="footer light-background">
+  <footer id="footer" class="footer light-background">
 
     <div class="container">
       <div class="copyright text-center ">
@@ -121,7 +128,8 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
