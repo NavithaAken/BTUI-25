@@ -172,7 +172,7 @@ document.querySelectorAll('#navmenu a').forEach(link => {
 })();
 
 
-  const countdownDate = new Date("January 30, 2026 19:00:00").getTime(); 
+  const countdownDate = new Date("November 13, 2025 19:04:00").getTime(); 
 
   const timer = setInterval(function() {
     const now = new Date().getTime();
@@ -191,7 +191,109 @@ document.querySelectorAll('#navmenu a').forEach(link => {
     if (distance < 0) {
       clearInterval(timer);
       document.getElementById("countdown-timer").innerHTML =
-        "<h3 style='color:#FFD700; text-shadow:0 0 15px rgba(255,215,0,0.9);'> The Classical Night Has Begun! 🎶</h3>";
+        "<h2 style='color:#FFD700; text-shadow:0 0 15px rgba(255,215,0,0.9); '> The Classical Night Has Begun!</h2>";
     }
   }, 1000);
+
+  // Calendar Script
+  const calendarBody = document.getElementById("calendar-body");
+  const monthAndYear = document.getElementById("monthAndYear");
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  let today = new Date();
+  let currentMonth = today.getMonth();
+  let currentYear = today.getFullYear();
+
+  const events = {
+    "2026-01-30": "Classical Nite",
+    "2026-02-25": "Sports Meet",
+    "2026-03-10": "Science Exhibition"
+  };
+
+  function showCalendar(month, year) {
+    calendarBody.innerHTML = "";
+    let firstDay = new Date(year, month).getDay();
+    let daysInMonth = 32 - new Date(year, month, 32).getDate();
+    monthAndYear.textContent = `${months[month]} ${year}`;
+    let date = 1;
+    for (let i = 0; i < 6; i++) {
+      let row = document.createElement("tr");
+      for (let j = 0; j < 7; j++) {
+        if (i === 0 && j < firstDay) {
+          let cell = document.createElement("td");
+          row.appendChild(cell);
+        } else if (date > daysInMonth) {
+          break;
+        } else {
+          let cell = document.createElement("td");
+          cell.textContent = date;
+          let fullDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+          if (events[fullDate]) {
+            cell.classList.add("highlight");
+            cell.title = events[fullDate];
+          }
+          row.appendChild(cell);
+          date++;
+        }
+      }
+      calendarBody.appendChild(row);
+    }
+  }
+
+  document.getElementById("prevMonth").addEventListener("click", () => {
+    currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
+    currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+    showCalendar(currentMonth, currentYear);
+  });
+
+  document.getElementById("nextMonth").addEventListener("click", () => {
+    currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
+    currentMonth = (currentMonth + 1) % 12;
+    showCalendar(currentMonth, currentYear);
+  });
+
+  showCalendar(currentMonth, currentYear);
+
+// Newsletter form handling (simple client-side validation + feedback)
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('newsletter-form');
+  const emailInput = document.getElementById('newsletter-email');
+  const feedback = document.getElementById('newsletter-feedback');
+
+  if (!form || !emailInput || !feedback) return;
+
+  function validateEmail(email) {
+    // simple RFC-like check
+    return /^[\w-.+]+@[\w-]+\.[\w-.]+$/.test(email);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    if (!email) {
+      feedback.textContent = 'Please enter your email address.';
+      feedback.style.color = 'var(--default-color)';
+      return;
+    }
+    if (!validateEmail(email)) {
+      feedback.textContent = 'Please enter a valid email address.';
+      feedback.style.color = 'crimson';
+      return;
+    }
+
+    // Simulate a successful subscribe action (no backend)
+    feedback.textContent = 'Thanks — you are subscribed! Check your email to confirm.';
+    feedback.style.color = 'green';
+    emailInput.value = '';
+
+    // small animation pulse
+    feedback.animate([
+      { opacity: 0.2, transform: 'translateY(3px)' },
+      { opacity: 1, transform: 'translateY(0)' }
+    ], { duration: 400, easing: 'ease-out' });
+
+    setTimeout(() => { feedback.textContent = ''; }, 5000);
+  });
+});
+
+
 

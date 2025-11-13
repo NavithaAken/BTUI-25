@@ -46,8 +46,8 @@
           <li><a href="news.html">News</a></li>
           <li><a href="login.html">Login</a></li>
           <li><a href="register.html">Register</a></li>
-          <li><a href="upcoming-events.html">Upcoming Events</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="upcoming-events.html" class="active">Upcoming Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -56,91 +56,121 @@
 
   <main class="main">
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>If you have any questions,feel free to contact us.</p>
-      </div><!-- End Section Title -->
+    <!-- Upcoming Events Section -->
+<section id="upcoming-events" class="section bg-light text-light py-5">
+  <div class="container" data-aos="fade-up">
+    <h2 class="text-center mb-5" style="color:#FFD700; text-shadow:0 0 8px rgba(255,215,0,0.8);">
+      Upcoming Events
+    </h2>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>Ananda Collage Colombo 10</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+94 11 269 5503</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Us</h3>
-                  <p>principal_anan@sltnet.lk</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.715147861525!2d79.86394546973487!3d6.924614203093991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2590d00000001%3A0x608d35c5c354870f!2sAnanda%20College!5e0!3m2!1sen!2slk!4v1762938920798!5m2!1sen!2slk" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+    <!-- Event Cards -->
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card event-card h-100 shadow-lg border-0">
+          <img src="assets/img/event1.jpg" class="card-img-top" alt="Classical Nite">
+          <div class="card-body text-center">
+            <h5 class="card-title text-dark fw-bold">Classical Nite</h5>
+            <p class="card-text text-muted">An unforgettable night of music, culture, and tradition.</p>
+            <p class="fw-semibold text-danger"><i class="bi bi-calendar-event"></i> January 30, 2026</p>
           </div>
-
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
         </div>
-
       </div>
 
-    </section><!-- /Contact Section -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card event-card h-100 shadow-lg border-0">
+          <img src="assets/img/event2.jpg" class="card-img-top" alt="Sports Meet">
+          <div class="card-body text-center">
+            <h5 class="card-title text-dark fw-bold">Annual Sports Meet</h5>
+            <p class="card-text text-muted">Show your spirit at the most energetic event of the year!</p>
+            <p class="fw-semibold text-danger"><i class="bi bi-calendar-event"></i> February 25, 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card event-card h-100 shadow-lg border-0">
+          <img src="assets/img/event3.jpg" class="card-img-top" alt="Science Exhibition">
+          <div class="card-body text-center">
+            <h5 class="card-title text-dark fw-bold">Science Exhibition</h5>
+            <p class="card-text text-muted">Discover innovative projects and experiments by our students.</p>
+            <p class="fw-semibold text-danger"><i class="bi bi-calendar-event"></i> March 10, 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Calendar Section -->
+<section id="calendar" class="section py-5 bg-light">
+  <div class="container" data-aos="fade-up">
+    <h2 class="text-center mb-4" style="color:#b8860b;">Event Calendar</h2>
+    <div id="calendar-container" class="bg-white shadow-lg rounded p-4 mx-auto" style="max-width: 600px;">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <button class="btn btn-outline-secondary" id="prevMonth"><i class="bi bi-chevron-left"></i></button>
+        <h4 id="monthAndYear" class="m-0 text-dark fw-bold"></h4>
+        <button class="btn btn-outline-secondary" id="nextMonth"><i class="bi bi-chevron-right"></i></button>
+      </div>
+      <table class="table table-bordered text-center mb-0">
+        <thead class="table-warning">
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- Countdown Section -->
+    <section id="countdown" class="countdown section">
+
+  <div class="container text-center" data-aos="fade-up">
+    <h2 style="color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);">
+      Get ready for the Classical Nite !
+    </h2>
+    <p style="color: #ddd;">Join us for an unforgettable evening on <strong>January 30th</strong>!</p>
+  </div>
+
+  <div class="container" data-aos="zoom-out" data-aos-delay="100">
+    <div id="countdown-timer" class="row justify-content-center mt-4">
+      <div class="col-6 col-md-3">
+        <div class="time-box">
+          <span id="days">00</span>
+          <p>Days</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="time-box">
+          <span id="hours">00</span>
+          <p>Hours</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <p>Minutes</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <p>Seconds</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
 
   </main>
 
@@ -171,7 +201,7 @@
           <h5>Contact</h5>
           <p><i class="bi bi-geo-alt"></i> Maradana, Colombo 10, Sri Lanka</p>
           <p><i class="bi bi-telephone"></i> <a href="tel:+94112234567">+94 11 269 5503</a></p>
-          <p><i class="bi bi-envelope"></i> <a href="mailto:info@anandacollege.lk">principal_anan@sltnet.lk</a></p>
+          <p><i class="bi bi-envelope"></i> <a href="mailto:info@anandacollege.lk"> principal_anan@sltnet.lk</a></p>
           <p class="mt-2"><a href="https://maps.app.goo.gl/pChz8pjaXuDN7PRb9" target="_blank" rel="noopener">View on map</a></p>
         </div>
 
@@ -185,7 +215,8 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

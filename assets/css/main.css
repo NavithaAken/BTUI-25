@@ -413,6 +413,81 @@ h6 {
   text-align: center;
 }
 
+/* Enhanced footer styles */
+.footer .row {
+  gap: 1rem;
+}
+.footer-about .footer-logo img {
+  max-height: 46px;
+  border-radius: 6px;
+}
+.footer-about .sitename {
+  font-size: 18px;
+  margin: 0;
+  color: var(--heading-color);
+}
+.footer-partners {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.partner-logo {
+  height: 36px;
+  opacity: 0.95;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.partner-logo:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+.footer-links h5,
+.footer-contact h5,
+.footer-newsletter h5 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+.footer-links ul li a {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+.footer-links ul li a:hover {
+  color: var(--accent-color);
+}
+.footer-contact p {
+  margin: 6px 0;
+}
+.footer-contact a {
+  color: inherit;
+}
+.footer-newsletter .form-control {
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+.footer-newsletter .btn {
+  border-radius: 6px;
+}
+.footer-newsletter #newsletter-feedback {
+  font-size: 0.9rem;
+  min-height: 1.2rem;
+}
+.footer .social-links a {
+  margin-right: 8px;
+}
+
+@media (max-width: 767px) {
+  .footer .row {
+    gap: 0.5rem;
+  }
+  .footer-about .sitename { font-size: 16px; }
+  .partner-logo { height: 28px; }
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -491,6 +566,7 @@ h6 {
   opacity: 1;
   bottom: 15px;
 }
+
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
@@ -1148,6 +1224,31 @@ section,
   opacity: 1;
   bottom: 0;
 }
+
+/* Upcoming Events Card Styling */
+.event-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+}
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+.event-card img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Calendar Highlight for Events */
+.highlight {
+  background-color: #FFD700 !important;
+  color: #000 !important;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio Details Section
