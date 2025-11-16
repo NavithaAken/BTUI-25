@@ -73,4 +73,5 @@ The complete development process—from planning to deployment—took approximat
 
 
 GitHub repository link : https://github.com/NavithaAken/BTUI-25
-Deployment link of the website :  
+
+Deployment link of the website :  https://navithaaken.github.io/BTUI-25/
