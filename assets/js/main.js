@@ -1,52 +1,43 @@
-
-
 (function() {
   "use strict";
 
+  
+  const body = document.querySelector('body');
+  const mobileNavToggleButton = document.querySelector('.mobile-nav-toggle'); 
+  const navMenu = document.querySelector('#navmenu');
+
+  function mobileNavToggle() {
+    body.classList.toggle('mobile-nav-active');
+    mobileNavToggleButton.classList.toggle('bi-list');
+    mobileNavToggleButton.classList.toggle('bi-x');
+  }
+
+  
+  if (mobileNavToggleButton) {
+    mobileNavToggleButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      mobileNavToggle();
+    });
+  }
+
   function toggleScrolled() {
-    const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+    window.scrollY > 100 ? body.classList.add('scrolled') : body.classList.remove('scrolled');
   }
 
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-
-  
-
-
-/**
- * Mobile nav toggle
- */
-const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-const navMenu = document.querySelector('.navmenu ul');
-const body = document.querySelector('body');
-
-function mobileNavToggle() {
-  body.classList.toggle('mobile-nav-active');
-  mobileNavToggleBtn.classList.toggle('bi-list');
-  mobileNavToggleBtn.classList.toggle('bi-x');
-}
-
-mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
-
-/**
- * Hide mobile nav on same-page/hash links
- */
-document.querySelectorAll('#navmenu a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (body.classList.contains('mobile-nav-active')) {
-      mobileNavToggle();
-    }
+  document.querySelectorAll('#navmenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      
+      if (body.classList.contains('mobile-nav-active') && typeof mobileNavToggle === 'function') {
+        mobileNavToggle();
+      }
+    });
   });
-});
 
-
-  /**
-   * Preloader
-   */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
@@ -54,9 +45,6 @@ document.querySelectorAll('#navmenu a').forEach(link => {
     });
   }
 
-  /**
-   * Scroll top button
-   */
   let scrollTop = document.querySelector('.scroll-top');
 
   function toggleScrollTop() {
@@ -64,20 +52,20 @@ document.querySelectorAll('#navmenu a').forEach(link => {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
+
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
-  /**
-   * Animation on scroll function and init
-   */
   function aosInit() {
     AOS.init({
       duration: 600,
@@ -88,31 +76,9 @@ document.querySelectorAll('#navmenu a').forEach(link => {
   }
   window.addEventListener('load', aosInit);
 
-  /**
-   * Animate the skills items on reveal
-   */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
-    });
-  });
 
-  /**
-   * Initiate Pure Counter
-   */
   new PureCounter();
 
-  /**
-   * Init swiper sliders
-   */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
@@ -120,7 +86,6 @@ document.querySelectorAll('#navmenu a').forEach(link => {
       );
 
       if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
       } else {
         new Swiper(swiperElement, config);
       }
@@ -129,16 +94,10 @@ document.querySelectorAll('#navmenu a').forEach(link => {
 
   window.addEventListener("load", initSwiper);
 
-  /**
-   * Initiate glightbox
-   */
   const glightbox = GLightbox({
     selector: '.glightbox'
   });
 
-  /**
-   * Init isotope layout and filters
-   */
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
@@ -166,134 +125,126 @@ document.querySelectorAll('#navmenu a').forEach(link => {
         }
       }, false);
     });
-
   });
 
 })();
 
 
-  const countdownDate = new Date("November 13, 2025 19:04:00").getTime(); 
 
-  const timer = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = countdownDate - now;
+const countdownDate = new Date("December 18, 2025 14:00:00").getTime();
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+const timer = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = countdownDate - now;
 
-    document.getElementById("days").textContent = days.toString().padStart(2, "0");
-    document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
-    document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
-    document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if (distance < 0) {
-      clearInterval(timer);
-      document.getElementById("countdown-timer").innerHTML =
-        "<h2 style='color:#FFD700; text-shadow:0 0 15px rgba(255,215,0,0.9); '> The Classical Night Has Begun!</h2>";
+  if (document.getElementById("days")) document.getElementById("days").textContent = days.toString().padStart(2, "0");
+  if (document.getElementById("hours")) document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+  if (document.getElementById("minutes")) document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+  if (document.getElementById("seconds")) document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+
+  if (distance < 0) {
+    clearInterval(timer);
+    if (document.getElementById("countdown-timer")) {
+      document.getElementById("countdown-timer").innerHTML = `
+        <h2 class="countdown-finish">PULZ'25 Has begun!</h2>
+      `;
     }
-  }, 1000);
+  }
 
-  // Calendar Script
-  const calendarBody = document.getElementById("calendar-body");
-  const monthAndYear = document.getElementById("monthAndYear");
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  let today = new Date();
-  let currentMonth = today.getMonth();
-  let currentYear = today.getFullYear();
+}, 1000);
 
-  const events = {
-    "2026-01-30": "Classical Nite",
-    "2026-02-25": "Sports Meet",
-    "2026-03-10": "Science Exhibition"
-  };
 
-  function showCalendar(month, year) {
-    calendarBody.innerHTML = "";
-    let firstDay = new Date(year, month).getDay();
-    let daysInMonth = 32 - new Date(year, month, 32).getDate();
-    monthAndYear.textContent = `${months[month]} ${year}`;
-    let date = 1;
-    for (let i = 0; i < 6; i++) {
-      let row = document.createElement("tr");
-      for (let j = 0; j < 7; j++) {
-        if (i === 0 && j < firstDay) {
-          let cell = document.createElement("td");
-          row.appendChild(cell);
-        } else if (date > daysInMonth) {
-          break;
-        } else {
-          let cell = document.createElement("td");
-          cell.textContent = date;
-          let fullDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
-          if (events[fullDate]) {
-            cell.classList.add("highlight");
-            cell.title = events[fullDate];
-          }
-          row.appendChild(cell);
-          date++;
+let currentDate = new Date();
+
+const events = {
+  "2025-12-18": "Anual ICT Day",
+  "2026-01-25": "Environmental Challenge",
+  "2026-02-10": "Anual Commerce Day",
+  "2026-03-03": "Photography Lecture Sessions",
+  "2026-03-23": "Photography Exibition",
+  "2026-03-10": "Mind Prob 2025"
+};
+
+function generateCalendar(month, year) {
+  let firstDay = new Date(year, month).getDay();
+  let daysInMonth = 32 - new Date(year, month, 32).getDate();
+
+  let calendarBody = document.getElementById("calendar-body");
+  if (!calendarBody) return; // Exit if calendar body doesn't exist
+
+  calendarBody.innerHTML = "";
+
+
+  document.getElementById("monthAndYear").innerHTML =
+    new Date(year, month).toLocaleString("default", {
+      month: "long"
+    }) + " " + year;
+
+  let date = 1;
+
+  for (let i = 0; i < 6; i++) {
+    let row = document.createElement("tr");
+
+    for (let j = 0; j < 7; j++) {
+      let cell = document.createElement("td");
+
+      if (i === 0 && j < firstDay) {
+        cell.innerHTML = "";
+      } else if (date > daysInMonth) {
+        break;
+      } else {
+        let formattedDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+        cell.innerHTML = date;
+
+
+        if (events[formattedDate]) {
+          cell.classList.add("event-day");
+
+
+          cell.onclick = () => {
+            const eventDetails = document.getElementById("event-details");
+            if (eventDetails) {
+              eventDetails.innerHTML = `
+                <div class="alert alert-info">
+                  <strong>${formattedDate}</strong><br>
+                  ${events[formattedDate]}
+                </div>
+              `;
+            }
+          };
         }
+
+        date++;
       }
-      calendarBody.appendChild(row);
+
+      row.appendChild(cell);
     }
+
+    calendarBody.appendChild(row);
   }
+}
 
-  document.getElementById("prevMonth").addEventListener("click", () => {
-    currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
-    currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
-    showCalendar(currentMonth, currentYear);
+const prevMonthButton = document.getElementById("prevMonth");
+const nextMonthButton = document.getElementById("nextMonth");
+
+if (prevMonthButton) {
+  prevMonthButton.addEventListener("click", () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    generateCalendar(currentDate.getMonth(), currentDate.getFullYear());
   });
+}
 
-  document.getElementById("nextMonth").addEventListener("click", () => {
-    currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
-    currentMonth = (currentMonth + 1) % 12;
-    showCalendar(currentMonth, currentYear);
+if (nextMonthButton) {
+  nextMonthButton.addEventListener("click", () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    generateCalendar(currentDate.getMonth(), currentDate.getFullYear());
   });
-
-  showCalendar(currentMonth, currentYear);
-
-// Newsletter form handling (simple client-side validation + feedback)
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('newsletter-form');
-  const emailInput = document.getElementById('newsletter-email');
-  const feedback = document.getElementById('newsletter-feedback');
-
-  if (!form || !emailInput || !feedback) return;
-
-  function validateEmail(email) {
-    // simple RFC-like check
-    return /^[\w-.+]+@[\w-]+\.[\w-.]+$/.test(email);
-  }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const email = emailInput.value.trim();
-    if (!email) {
-      feedback.textContent = 'Please enter your email address.';
-      feedback.style.color = 'var(--default-color)';
-      return;
-    }
-    if (!validateEmail(email)) {
-      feedback.textContent = 'Please enter a valid email address.';
-      feedback.style.color = 'crimson';
-      return;
-    }
-
-    // Simulate a successful subscribe action (no backend)
-    feedback.textContent = 'Thanks — you are subscribed! Check your email to confirm.';
-    feedback.style.color = 'green';
-    emailInput.value = '';
-
-    // small animation pulse
-    feedback.animate([
-      { opacity: 0.2, transform: 'translateY(3px)' },
-      { opacity: 1, transform: 'translateY(0)' }
-    ], { duration: 400, easing: 'ease-out' });
-
-    setTimeout(() => { feedback.textContent = ''; }, 5000);
-  });
-});
+}
 
 
-
+generateCalendar(currentDate.getMonth(), currentDate.getFullYear());
