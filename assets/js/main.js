@@ -169,7 +169,7 @@ function generateCalendar(month, year) {
   let daysInMonth = 32 - new Date(year, month, 32).getDate();
 
   let calendarBody = document.getElementById("calendar-body");
-  if (!calendarBody) return; // Exit if calendar body doesn't exist
+  if (!calendarBody) return; 
 
   calendarBody.innerHTML = "";
 
