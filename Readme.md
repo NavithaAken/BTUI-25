@@ -16,7 +16,7 @@ Phone Number: 0773813683
 
 Data derived from another sources;
 
-:https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap
+:https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900\&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900\&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900\&display=swap
 
 :https://fonts.googleapis.com
 
@@ -29,6 +29,7 @@ Data derived from another sources;
 :Animations were loaded by AOS animations
 
 :Images were taken by google.
+
 
 
 METHODOLOGICAL INFORMATION
@@ -72,6 +73,8 @@ Finally, I deployed the entire site using GitHub Pages, making it publicly acces
 The complete development process—from planning to deployment—took approximately 7 to 12 days, including designing, coding, debugging, content preparation, and final polishing.
 
 
+
 GitHub repository link : https://github.com/NavithaAken/BTUI-25
 
 Deployment link of the website :  https://navithaaken.github.io/BTUI-25/
+

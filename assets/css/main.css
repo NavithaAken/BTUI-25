@@ -950,6 +950,182 @@ section,
   }
 }
 
+.clubs-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #fff9e6, #fafafa);
+  text-align: center;
+}
+
+.clubs-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #8B0000;
+  margin-bottom: 10px;
+}
+
+.clubs-subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.clubs-desc {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 10px auto 30px;
+  line-height: 1.6;
+}
+
+.clubs-list-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #8B0000;
+}
+
+.clubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.club {
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid gold;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.club:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  background: #fff8d1;
+}
+
+.sports-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #fff9e6, #fafafa);
+  text-align: center;
+}
+
+.sports-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #8B0000;
+  margin-bottom: 10px;
+}
+
+.sports-subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.sports-desc {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 10px auto 30px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.sports-list-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #8B0000;
+  margin-bottom: 25px;
+}
+
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sport {
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid gold;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.35s ease;
+}
+
+.sport:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+  background: #fff3c6;
+}
+
+.acoba-section {
+  padding: 70px 20px;
+  background: white;
+  text-align: center;
+}
+
+.acoba-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #8B0000;
+  margin-bottom: 10px;
+}
+
+.acoba-subtitle {
+  font-size: 1.15rem;
+  color: #444;
+  max-width: 750px;
+  margin: 0 auto 40px;
+}
+
+.acoba-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.acoba-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  border: 2px solid gold;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: 0.35s ease;
+}
+
+.acoba-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #8B0000;
+  margin-bottom: 10px;
+}
+
+.acoba-card p {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.acoba-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  background: #fff7d9;
+}
+
 
 
 /*--------------------------------------------------------------
